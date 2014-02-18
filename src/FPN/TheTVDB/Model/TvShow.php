@@ -22,6 +22,10 @@ class TvShow extends AbstractModel
     protected $language;
     protected $genres = array();
 
+    protected $rating;
+    protected $ratingcount;
+    protected $statut;
+
     protected $theTvDbId;
     protected $imdbId;
     protected $zap2itId;
@@ -29,6 +33,8 @@ class TvShow extends AbstractModel
     protected $bannerUrl;
     protected $posterUrl;
     protected $fanartUrl;
+
+    protected $actors;
 
 
     public function getId()
@@ -66,6 +72,21 @@ class TvShow extends AbstractModel
         return $this->genres;
     }
 
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    public function getRatingCount()
+    {
+        return $this->ratingcount;
+    }
+
+    public function getStatut()
+    {
+        return $this->statut;
+    }
+
     public function getTheTvDbId()
     {
         return $this->theTvDbId;
@@ -94,5 +115,10 @@ class TvShow extends AbstractModel
     public function getFanartUrl()
     {
         return $this->fanartUrl;
+    }
+
+    public function getActors()
+    {
+        return $this->actors;
     }
 }

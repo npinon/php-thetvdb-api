@@ -176,6 +176,11 @@ class Api
             'language'      => isset($element->language) ? (string)$element->language : (isset($element->Language) ? (string)$element->Language : null),
             'genres'        => isset($element->Genre) ? explode('|', trim($element->Genre, '|')) : array(),
 
+            'rating'        => isset($element->Rating) ? (float)$element->Rating : null,
+            'ratingcount'   => isset($element->RatingCount) ? (int)$element->RatingCount : null,
+
+            'statut'        => isset($element->Status) ? (string)$element->Status : null,
+
             'firstAired'    => (string)$element->FirstAired
                 ? new \DateTime($element->FirstAired)
                 : null,
@@ -187,6 +192,8 @@ class Api
             'bannerUrl'     => isset($element->banner) ? $this->baseImagesUrl.$element->banner : null,
             'posterUrl'     => isset($element->poster) ? $this->baseImagesUrl.$element->poster : null,
             'fanartUrl'     => isset($element->fanart) ? $this->baseImagesUrl.$element->fanart : null,
+
+            'actors'        => isset($element->Actors) ? explode('|', trim($element->Actors, '|')) : array(),
         ));
 
         return $tvshow;
@@ -211,6 +218,8 @@ class Api
             'firstAired'    => (string)$element->FirstAired
                 ? new \DateTime($element->FirstAired)
                 : null,
+
+            'image'         => isset($element->filename) ? $this->baseImagesUrl.$element->filename : null,
         ));
 
         return $episode;

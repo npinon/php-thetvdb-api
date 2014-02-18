@@ -26,6 +26,7 @@ class Episode extends AbstractModel
     protected $overview;
     protected $language;
 
+    protected $image;
 
     public function getId()
     {
@@ -70,5 +71,10 @@ class Episode extends AbstractModel
     public function getLanguage()
     {
         return $this->language;
+    }
+
+    public function getImage()
+    {
+        return $this->getImage();
     }
 }
