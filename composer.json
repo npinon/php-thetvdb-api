@@ -1,5 +1,5 @@
 {
-    "name": "fpn/thetvdb",
+    "name": "npinon/thetvdb",
     "description": "API client library for TheTVDB.com",
     "keywords": [ "thetvdb.com", "api" ],
     "license": "MIT",
