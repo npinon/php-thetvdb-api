@@ -189,11 +189,11 @@ class Api
             'imdbId'        => (string)$element->IMDB_ID,
             'zap2itId'      => (string)$element->zap2it_id,
 
-            'bannerUrl'     => isset($element->banner) ? $this->baseImagesUrl.$element->banner : null,
-            'posterUrl'     => isset($element->poster) ? $this->baseImagesUrl.$element->poster : null,
-            'fanartUrl'     => isset($element->fanart) ? $this->baseImagesUrl.$element->fanart : null,
+            'bannerUrl'     => (isset($element->banner) && (string)$element->banner) ? $this->baseImagesUrl.$element->banner : null,
+            'posterUrl'     => (isset($element->poster) && (string)$element->poster) ? $this->baseImagesUrl.$element->poster : null,
+            'fanartUrl'     => (isset($element->fanart) && (string)$element->fanart) ? $this->baseImagesUrl.$element->fanart : null,
 
-            'actors'        => isset($element->Actors) ? explode('|', trim($element->Actors, '|')) : array(),
+            'actors'        => (isset($element->Actors) && (string)$element->Actors) ? explode('|', trim($element->Actors, '|')) : array(),
         ));
 
         return $tvshow;
@@ -219,7 +219,7 @@ class Api
                 ? new \DateTime($element->FirstAired)
                 : null,
 
-            'image'         => isset($element->filename) ? $this->baseImagesUrl.$element->filename : null,
+            'image'         => (isset($element->filename) && (string)$element->filename) ? $this->baseImagesUrl.$element->filename : null,
         ));
 
         return $episode;
