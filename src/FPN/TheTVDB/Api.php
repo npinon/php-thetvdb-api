@@ -193,7 +193,7 @@ class Api
             'posterUrl'     => (isset($element->poster) && (string)$element->poster) ? $this->baseImagesUrl.$element->poster : null,
             'fanartUrl'     => (isset($element->fanart) && (string)$element->fanart) ? $this->baseImagesUrl.$element->fanart : null,
 
-            'actors'        => (isset($element->Actors) && (string)$element->Actors) ? explode('|', trim($element->Actors, '|')) : array(),
+            'actors'        => (isset($element->Actors) && (string)$element->Actors !== '||') ? explode('|', trim($element->Actors, '|')) : null,
         ));
 
         return $tvshow;
